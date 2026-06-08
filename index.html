@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduBright Academy - Chinh Phục Khoa Học Dữ Liệu</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#c8dee2",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#1e5120",
+                        "primary": "#1e4ddb",
+                        "soft-sky": "#E5FBFF",
+                        "inverse-on-surface": "#dff5f9",
+                        "growth-green": "#C5FFBC",
+                        "on-background": "#0a1e22",
+                        "secondary-container": "#b5eead",
+                        "secondary": "#376935",
+                        "on-primary-fixed-variant": "#0037b9",
+                        "tertiary-fixed-dim": "#b6c4ff",
+                        "on-secondary-fixed": "#002204",
+                        "on-primary-fixed": "#001453",
+                        "on-secondary-container": "#3b6e39",
+                        "deep-ink": "#000000",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#e2f8fc",
+                        "secondary-fixed": "#b8f1af",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fffbff",
+                        "tertiary": "#3655b7",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "outline-variant": "#c4c5d7",
+                        "inverse-surface": "#203337",
+                        "on-tertiary-fixed": "#001550",
+                        "secondary-fixed-dim": "#9dd595",
+                        "outline": "#747686",
+                        "inverse-primary": "#b8c4ff",
+                        "tertiary-fixed": "#dce1ff",
+                        "surface-container-highest": "#d1e6ea",
+                        "primary-container": "#4168f5",
+                        "on-tertiary-container": "#fffbff",
+                        "primary-fixed": "#dde1ff",
+                        "surface-tint": "#224fdd",
+                        "tertiary-container": "#516ed2",
+                        "surface-bright": "#edfcff",
+                        "surface-container-high": "#d6ecf0",
+                        "surface": "#edfcff",
+                        "surface-variant": "#d1e6ea",
+                        "on-tertiary-fixed-variant": "#1b3ea1",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#0a1e22",
+                        "on-error": "#ffffff",
+                        "surface-container": "#dcf2f6",
+                        "background": "#edfcff",
+                        "on-surface-variant": "#434655",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "card": "1.5rem"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(180px, auto);
+            gap: 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #1e4ddb 0%, #4168f5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .soft-shadow {
+            box-shadow: 0px 10px 30px rgba(76, 114, 255, 0.08);
+        }
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scroll-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<nav class="bg-surface/90 dark:bg-surface-variant/90 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/20 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed">EduBright</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 font-bold font-label-md text-label-md" href="#">Khóa học</a>
+<a class="text-on-surface-variant dark:text-surface-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Lộ trình</a>
+<a class="text-on-surface-variant dark:text-surface-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Giảng viên</a>
+<a class="text-on-surface-variant dark:text-surface-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Cảm nhận</a>
+<a class="text-on-surface-variant dark:text-surface-dim hover:text-primary transition-colors font-label-md text-label-md" href="#">Tin tức</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden sm:block text-primary dark:text-primary-fixed-dim hover:text-primary-container transition-all active:scale-95 duration-150 ease-in-out font-label-md text-label-md">Đăng nhập</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95 duration-150 ease-in-out">Đăng ký ngay</button>
+</div>
+</div>
+</nav>
+<main>
+<section class="relative min-h-[85vh] flex items-center overflow-hidden pt-12 md:pt-0">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-growth-green/20 rounded-full blur-[100px]"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="animate-in fade-in slide-in-from-left-8 duration-700">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary font-label-md text-label-md mb-6">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+                        Khóa học đột phá 2024
+                    </div>
+<h1 class="font-display-lg text-[42px] md:text-display-lg text-on-surface leading-tight mb-6">
+                        Làm Chủ <span class="text-gradient">Khoa Học Dữ Liệu</span> &amp; Trí Tuệ Nhân Tạo
+                    </h1>
+<p class="text-body-lg text-on-surface-variant mb-8 max-w-[540px]">
+                        Chương trình đào tạo thực chiến từ con số 0, giúp bạn xây dựng nền tảng vững chắc và sẵn sàng cho sự nghiệp trong kỷ nguyên số.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline-md text-headline-md hover:bg-primary-container transition-all flex items-center justify-center gap-3 active:scale-95">
+                            Bắt đầu học ngay
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="glass-card text-on-surface px-8 py-4 rounded-full font-headline-md text-headline-md hover:bg-surface-container-high transition-all border border-outline-variant active:scale-95">
+                            Xem lộ trình
+                        </button>
+</div>
+<div class="mt-12 flex items-center gap-4">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full bg-surface-dim border-2 border-background"></div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim border-2 border-background"></div>
+<div class="w-10 h-10 rounded-full bg-secondary-fixed border-2 border-background"></div>
+</div>
+<p class="text-caption text-on-surface-variant">
+<span class="font-bold text-on-surface">5,000+</span> học viên đã tin tưởng và theo học
+                        </p>
+</div>
+</div>
+<div class="relative animate-in fade-in slide-in-from-right-8 duration-700 delay-200">
+<div class="aspect-[4/3] rounded-card overflow-hidden soft-shadow relative">
+<img alt="Giảng viên đang trình bày nghiên cứu khoa học" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvE0v6meTmuObMf2X6s5uZ8x473zSsRdgtHLvONw2eNe_RXSLGzjGyDY8S-AQ7CNv079atDuQeEK_60GypdW7AhGLtWjKsiOXV4Hb9Pb5940nSV-YeolcQebXF4gIj7hxECBigudhz8wMWM0rTSuCi5lljqYH_GrtXMc5i7j8ELHSfNaL9S9W66jgpx0PvIEuV-_fGY8F_7ym-XQcXZBttopJPAEQWdRCWZHuG3sZUkNeX-1mj6acthWwo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-xl flex items-center justify-between">
+<div>
+<p class="text-on-surface font-bold">Dự án thực tế</p>
+<p class="text-caption text-on-surface-variant">100+ Đồ án đã hoàn thành</p>
+</div>
+<div class="flex items-center gap-1 text-growth-green font-bold">
+<span class="material-symbols-outlined">trending_up</span>
+                                98%
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4 text-on-surface">Bạn sẽ đạt được gì?</h2>
+<p class="text-body-lg text-on-surface-variant max-w-[700px] mx-auto">Chúng tôi cung cấp kiến thức thực tế, tập trung vào kỹ năng làm việc thực sự thay vì chỉ lý thuyết suông.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface border border-outline-variant/30 p-8 rounded-card hover:bg-soft-sky transition-all duration-300 soft-shadow group">
+<div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">science</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3">Tư duy nghiên cứu</h3>
+<p class="text-body-md text-on-surface-variant">Xây dựng phương pháp nghiên cứu khoa học bài bản, từ đặt vấn đề đến thực thi thí nghiệm thực tế.</p>
+</div>
+<div class="bg-surface border border-outline-variant/30 p-8 rounded-card hover:bg-soft-sky transition-all duration-300 soft-shadow group">
+<div class="w-14 h-14 bg-secondary-container/30 rounded-2xl flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">analytics</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3">Phân tích dữ liệu</h3>
+<p class="text-body-md text-on-surface-variant">Thành thạo các công cụ xử lý và trực quan hóa dữ liệu phức tạp để đưa ra những nhận định chuẩn xác.</p>
+</div>
+<div class="bg-surface border border-outline-variant/30 p-8 rounded-card hover:bg-soft-sky transition-all duration-300 soft-shadow group">
+<div class="w-14 h-14 bg-tertiary-container/10 rounded-2xl flex items-center justify-center text-tertiary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">terminal</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3">Kỹ năng công nghệ</h3>
+<p class="text-body-md text-on-surface-variant">Tiếp cận và vận hành các hệ thống thiết bị hiện đại và phần mềm chuyên dụng trong ngành.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+<div class="max-w-[600px]">
+<h2 class="font-headline-lg text-headline-lg mb-4">Lộ trình học tập cá nhân hóa</h2>
+<p class="text-body-lg text-on-surface-variant">Từng bước chinh phục từ kiến thức cơ bản đến chuyên sâu với sự đồng hành của chuyên gia.</p>
+</div>
+<div class="flex gap-4">
+<div class="p-3 bg-primary text-on-primary rounded-full cursor-pointer hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</div>
+<div class="p-3 bg-primary text-on-primary rounded-full cursor-pointer hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto scroll-hide pb-8">
+<div class="min-w-[320px] flex-shrink-0 bg-white p-8 rounded-card border border-outline-variant/20 soft-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full translate-x-12 -translate-y-12"></div>
+<span class="text-primary font-bold text-[48px] opacity-10 absolute top-4 right-4">01</span>
+<div class="mb-12">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-caption">Giai đoạn 1</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4">Nền tảng &amp; Tư duy</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Giới thiệu về quy trình chuẩn
+                            </li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Các khái niệm cốt lõi
+                            </li>
+</ul>
+</div>
+<div class="min-w-[320px] flex-shrink-0 bg-white p-8 rounded-card border border-outline-variant/20 soft-shadow relative overflow-hidden">
+<span class="text-primary font-bold text-[48px] opacity-10 absolute top-4 right-4">02</span>
+<div class="mb-12">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-caption">Giai đoạn 2</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4">Kỹ năng chuyên môn</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Sử dụng công cụ đo lường
+                            </li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Phân tích mẫu vật thực tế
+                            </li>
+</ul>
+</div>
+<div class="min-w-[320px] flex-shrink-0 bg-white p-8 rounded-card border border-outline-variant/20 soft-shadow relative overflow-hidden">
+<span class="text-primary font-bold text-[48px] opacity-10 absolute top-4 right-4">03</span>
+<div class="mb-12">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-caption">Giai đoạn 3</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4">Đồ án cuối khóa</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Xây dựng dự án độc lập
+                            </li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-growth-green text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Báo cáo và thuyết trình
+                            </li>
+</ul>
+</div>
+</div>
+<div class="mt-12 h-2 bg-surface-dim rounded-full overflow-hidden">
+<div class="h-full bg-growth-green w-[40%] rounded-full shadow-[0_0_10px_rgba(197,255,188,0.5)]"></div>
+</div>
+</div>
+</section>
+<section class="py-section-gap bg-surface-container-high overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="relative z-10 rounded-card overflow-hidden soft-shadow aspect-square max-w-[500px]">
+<img alt="Chân dung giảng viên năng động đang chia sẻ kiến thức" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtKb-TsvLIZ8pq1zsY1Y2fK9Aaw0EYNv0-l0Spg77YJyMOqtwlG5npgebbDrze_NROrMT3aPz-M0U4b58wVo5fdKLBbt6uB7Z8l9DvPCruP5ynMdQtvcwW8uIFyrmA5yD22XTksFgyvzWamCQio-fGHXFpo-8xKnc-GdmqY_rBulSBFOwVjSvBs-ZhKDQzS-gJ8guYKuQpCIaBdx7aHmZQRbYt2lf_cmOZC3qlXy6-RhiT4AS1mJjVVdtOD"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-64 h-64 bg-primary/20 rounded-full blur-[60px] -z-10"></div>
+<div class="absolute top-12 -left-8 glass-card p-6 rounded-2xl z-20 animate-bounce transition-all duration-[3000ms]">
+<p class="font-bold text-on-surface">Chuyên gia tâm huyết</p>
+<p class="text-caption text-on-surface-variant">10+ Năm kinh nghiệm</p>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6">Đội ngũ giảng viên ưu tú</h2>
+<p class="text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Đội ngũ hướng dẫn viên tại EduBright không chỉ là những người thầy, mà còn là những chuyên gia đang trực tiếp làm việc tại các phòng Lab và tập đoàn công nghệ lớn. Họ mang đến những trải nghiệm thực tế quý báu mà không sách vở nào có được.
+                    </p>
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="font-bold">Chứng chỉ uy tín</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+<span class="font-bold">Hỗ trợ 24/7</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline-md text-headline-md hover:bg-primary-container transition-all active:scale-95">Tìm hiểu thêm</button>
+</div>
+</div>
+</section>
+<section class="py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Cảm nhận từ học viên</h2>
+<p class="text-body-lg text-on-surface-variant">Hơn 5000+ học viên đã thay đổi sự nghiệp của mình thông qua khóa học.</p>
+</div>
+<div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+<div class="break-inside-avoid glass-card p-4 rounded-card soft-shadow hover:scale-[1.02] transition-transform duration-300">
+<img alt="Feedback học viên hài lòng với khóa học" class="w-full rounded-xl mb-4" src="https://lh3.googleusercontent.com/aida/AP1WRLtqXYM5877hXi8CdDWxJiQRsxAidgNuES5OjNPtVt4otB5qjox0wi7AYCX3KsMCN80sd4b-_qM75UvR_cvynls_OnEWYaZzj-3Do0GYxgIwUTUICsRDJctsp-WXnHPbnESYRxkkHU-7kJfLxsW8hFn63MQM455BoHLgjDl2r8_91a2AiXQBLjp0KNsa52iAxpoSIf9WrToXwoeENVt02NS4nGFNxyKGVk7UkPwa5Tahq_pgt_NQ4X5nnRTJ"/>
+</div>
+<div class="break-inside-avoid glass-card p-4 rounded-card soft-shadow hover:scale-[1.02] transition-transform duration-300">
+<img alt="Tin nhắn cảm ơn từ học viên" class="w-full rounded-xl mb-4" src="https://lh3.googleusercontent.com/aida/AP1WRLsbDp7JnzK41wgTvPyxVhvWBwqsONwp1goJB5PzLlqY_LcqGil6v8jf1VhuUhGrtCMGZlTYc598N44L1ZQ2qx69_ZJIhKN5SpqupI9cg6rHX1IcMs4X3M46KB9oNaoG8ruy82RsskIJ7WBNKc3VUkvtUbg1H60dp3NTwqNH9GKsNVZfBTP-Y-nDUM0l0lp8O_RfTjcUzZFlNMhZYISJnZ3zDx4v5PbDmiy_QCwO_Sd2FXdlC2XFrI21HFEm"/>
+</div>
+<div class="break-inside-avoid glass-card p-4 rounded-card soft-shadow hover:scale-[1.02] transition-transform duration-300">
+<img alt="Học viên khoe chứng chỉ hoàn thành khóa học" class="w-full rounded-xl mb-4" src="https://lh3.googleusercontent.com/aida/AP1WRLuVSFHu4tBs7wjxBbe6QLgiZFGHJtc9NJITn1IBCQSz5PQOsl0i6hRdSrVIUx8bkvH1FSB1YoNnd8EaHUQPgWNQ5p03StOjvkCZZ0ytRYnduKoa5h5ZQp0hck__6VNLzOrQ-jCkK4fljTn6_YJiTVzLG9N0fsipQyPtK2Fg0O2C-x47TQQ6Le_nFq2GG626LySfJi3zYTI8MDiO0W49L7uL9KYozKZY7wiaf4mH4rFk-sINLjkweIyRsURy"/>
+</div>
+<div class="break-inside-avoid glass-card p-4 rounded-card soft-shadow hover:scale-[1.02] transition-transform duration-300">
+<img alt="Đánh giá chi tiết về lộ trình học tập" class="w-full rounded-xl mb-4" src="https://lh3.googleusercontent.com/aida/AP1WRLvLnq18dzKGnIwE_L7j5n0OIsl57iyCqIU5wAUi1okIhGTG5uFte1kj0jKfsvEjIBOV91_S5AZafBnlyclxT4H74j1yWQhOp0gRInbonLlUZnrQLoagKbVPYTP_fhwiR4wetDmZthyIlNV8cvkfOQf6NlGAh10sREsiZq8ca_2852BE2rO5KN5n66ewGjh7SocwKx52JGTY8XTW9i9WTBK0yz43IuPIodwHbxzQXrlq-I-ri6jm9bHQ6Rgj"/>
+</div>
+<div class="break-inside-avoid glass-card p-4 rounded-card soft-shadow hover:scale-[1.02] transition-transform duration-300">
+<img alt="Ảnh chụp màn hình kết quả dự án học viên" class="w-full rounded-xl mb-4" src="https://lh3.googleusercontent.com/aida/AP1WRLtQ-Xqyipdm5dcFv-7ClNv3iDQhM7eDlfmJ9ZeicnQUZGrgSAlkqn32fp5-Trw-WS85cm-HPZn-F0_NEnh-3RQos0fVXBBBtts_Zi32iUFLmsOs27e9vS1aCGPG_sUu4aXXQHuV-bCRBybsRlj_8bstZVDBGlrl3jHKb0sO8ENvs3n5kdS2oaftq7SSfEXF8o0bztXUigXSmK4EEvM4QkqNqzVr1QKt240hKa5vzQGtQp659DbDe4pC_Nc"/>
+</div>
+<div class="break-inside-avoid glass-card p-4 rounded-card soft-shadow hover:scale-[1.02] transition-transform duration-300">
+<img alt="Biểu đồ tiến bộ của học viên sau khóa học" class="w-full rounded-xl mb-4" src="https://lh3.googleusercontent.com/aida/AP1WRLtlg75XpZT5X-lQuuzhoAkTYPJnXAgTJ9Ln2N6kU2wcNVoQsWRjV86ivO_a0Q0AHmt0UIXjl6jZJ4aIZCpgmaJYzdhS2zY9oZtALhpQRDZpDJgFHt4lWjWkb_Dkb3ccvMqkhnOBQINyQfQGH6BbNVdFuwAHB6xS6-ZKuTfhrbBJb8_vZnIVxea05JU6V2MaLY4lsHcWwytgKUvg_ky0EdluX_rmWPSuQoR7IPPBWn2MVFTU-WMBjOe2Po0"/>
+</div>
+<div class="break-inside-avoid glass-card p-4 rounded-card soft-shadow hover:scale-[1.02] transition-transform duration-300">
+<img alt="Feedback qua email từ doanh nghiệp tuyển dụng học viên" class="w-full rounded-xl mb-4" src="https://lh3.googleusercontent.com/aida/AP1WRLt0zEBWAnnudcpDO7bO2LjvWCbJThECDiUZNZCNmH4BMq0jcmgVC9HHD-OkomNfTLa_bK-RgsH1d2apr8s8bdxXzpcdfx8gbxuRRtD9n8w4PAe4lYF-bgN-7l1CcNl38on-SC1tcYqKfgeWG0vJ0EIZECw4vgPpn8xQwTcqkxmjUeWOv4hFk_7As87gIAfUF-2EKexZM3xOu--VAOc4nrg8RFHewfagqDUgTfkkCRJWu_QiRe-WkhekCEkt"/>
+</div>
+<div class="break-inside-avoid glass-card p-4 rounded-card soft-shadow hover:scale-[1.02] transition-transform duration-300">
+<img alt="Ảnh nhóm học viên trong buổi workshop thực tế" class="w-full rounded-xl mb-4" src="https://lh3.googleusercontent.com/aida/AP1WRLurmoTqQmT-_cmZOXjV9XZhDWtBbEDTPOfrn5OZykBg70nAOnmtBrs9PxlNe_MzIzHRdKoVVo8iLdoCZF3zdqfJeKFUfrdvgba_JjMGWUDnwoCa1LLxT-l5PStkZqNdxZU3oqy53qcPHaIDbXRRfd0znuwzzYxnD3DMHvJrUipW8Schw-i7yVv5CH2P6RH9v2mXY1jJoapwFmWAke0g6Ixm9vM0qEkpvl4jKNW3N1HjwtygSkgzydmwYgl5"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap relative overflow-hidden px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto bg-primary rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary-container/40 via-transparent to-transparent"></div>
+<div class="relative z-10">
+<h2 class="font-display-lg text-[32px] md:text-display-lg text-on-primary mb-8">Sẵn sàng để bắt đầu hành trình của bạn?</h2>
+<p class="text-on-primary/80 text-body-lg mb-12 max-w-[600px] mx-auto">Đăng ký ngay hôm nay để nhận ưu đãi lên đến 30% học phí và bộ tài liệu chuyên sâu độc quyền.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="bg-growth-green text-on-secondary-fixed font-headline-md text-headline-md px-12 py-5 rounded-full hover:scale-105 transition-transform active:scale-95">Đăng ký tham gia ngay</button>
+<button class="text-on-primary font-headline-md text-headline-md px-8 py-5 rounded-full border border-on-primary/30 hover:bg-on-primary/10 transition-all">Nhận tư vấn miễn phí</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-inverse-surface dark:bg-deep-ink pt-section-gap pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-headline-md font-headline-md text-soft-sky mb-6">EduBright</div>
+<p class="text-surface-dim font-body-md mb-6 leading-relaxed">
+                    Nền tảng học tập hiện đại cho tương lai. Chúng tôi cam kết mang lại giá trị thực tế nhất cho mỗi học viên.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-on-surface-variant/20 flex items-center justify-center text-soft-sky hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-on-surface-variant/20 flex items-center justify-center text-soft-sky hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-on-primary font-bold mb-6">Liên kết</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-dim hover:text-soft-sky hover:underline decoration-growth-green underline-offset-4 transition-colors font-label-md text-label-md" href="#">Khóa học</a></li>
+<li><a class="text-surface-dim hover:text-soft-sky hover:underline decoration-growth-green underline-offset-4 transition-colors font-label-md text-label-md" href="#">Lộ trình</a></li>
+<li><a class="text-surface-dim hover:text-soft-sky hover:underline decoration-growth-green underline-offset-4 transition-colors font-label-md text-label-md" href="#">Về chúng tôi</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-on-primary font-bold mb-6">Hỗ trợ</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-dim hover:text-soft-sky hover:underline decoration-growth-green underline-offset-4 transition-colors font-label-md text-label-md" href="#">Liên hệ</a></li>
+<li><a class="text-surface-dim hover:text-soft-sky hover:underline decoration-growth-green underline-offset-4 transition-colors font-label-md text-label-md" href="#">Chính sách bảo mật</a></li>
+<li><a class="text-surface-dim hover:text-soft-sky hover:underline decoration-growth-green underline-offset-4 transition-colors font-label-md text-label-md" href="#">Điều khoản</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-on-primary font-bold mb-6">Đăng ký bản tin</h4>
+<p class="text-surface-dim text-caption mb-4">Cập nhật những thông tin mới nhất về khóa học và ưu đãi.</p>
+<div class="relative">
+<input class="w-full bg-on-surface-variant/10 border border-outline/30 rounded-full py-3 px-6 text-on-primary focus:ring-primary focus:border-primary outline-none" placeholder="Email của bạn" type="email"/>
+<button class="absolute right-2 top-1.5 bg-growth-green text-on-secondary-fixed p-1.5 rounded-full hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-section-gap pt-8 border-t border-outline/20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<p class="text-surface-dim text-caption opacity-60">© 2024 EduBright Academy. Nền tảng học tập hiện đại cho tương lai.</p>
+</div>
+</footer>
+<script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in', 'fade-in', 'slide-in-from-bottom-8', 'duration-700');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => observer.observe(el));
+    </script>
+</body></html>
