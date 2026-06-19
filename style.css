@@ -1,0 +1,90 @@
+/* --- Tailwind Theme Color Variables --- */
+@layer base {
+    :root {
+        --surface-dim: #c8dee2;
+        --on-primary: #ffffff;
+        --on-secondary-fixed-variant: #1e5120;
+        --primary: #1e4ddb;
+        --soft-sky: #E5FBFF;
+        --inverse-on-surface: #dff5f9;
+        --growth-green: #C5FFBC;
+        --on-background: #0a1e22;
+        --secondary-container: #b5eead;
+        --secondary: #376935;
+        --on-primary-fixed-variant: #0037b9;
+        --tertiary-fixed-dim: #b6c4ff;
+        --on-secondary-fixed: #002204;
+        --on-primary-fixed: #001453;
+        --on-secondary-container: #3b6e39;
+        --deep-ink: #000000;
+        --error-container: #ffdad6;
+        --error: #ba1a1a;
+        --surface-container-low: #e2f8fc;
+        --secondary-fixed: #b8f1af;
+        --on-secondary: #ffffff;
+        --on-error-container: #93000a;
+        --on-primary-container: #fffbff;
+        --tertiary: #3655b7;
+        --primary-fixed-dim: #b8c4ff;
+        --outline-variant: #c4c5d7;
+        --inverse-surface: #203337;
+        --on-tertiary-fixed: #001550;
+        --secondary-fixed-dim: #9dd595;
+        --outline: #747686;
+        --inverse-primary: #b8c4ff;
+        --tertiary-fixed: #dce1ff;
+        --surface-container-highest: #d1e6ea;
+        --primary-container: #4168f5;
+        --on-tertiary-container: #fffbff;
+        --primary-fixed: #dde1ff;
+        --surface-tint: #224fdd;
+        --tertiary-container: #516ed2;
+        --surface-bright: #edfcff;
+        --surface-container-high: #d6ecf0;
+        --surface: #edfcff;
+        --surface-variant: #d1e6ea;
+        --on-tertiary-fixed-variant: #1b3ea1;
+        --on-tertiary: #ffffff;
+        --on-surface: #0a1e22;
+        --on-error: #ffffff;
+        --surface-container: #dcf2f6;
+        --background: #edfcff;
+        --on-surface-variant: #434655;
+        --surface-container-lowest: #ffffff;
+    }
+}
+
+/* --- Material Icons Config --- */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* --- Custom Project Styles --- */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #1e4ddb 0%, #4168f5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.soft-shadow {
+    box-shadow: 0px 10px 30px rgba(76, 114, 255, 0.08);
+}
+
+/* Hide Scrollbar but keep functionality */
+.scroll-hide::-webkit-scrollbar {
+    display: none;
+}
+.scroll-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
